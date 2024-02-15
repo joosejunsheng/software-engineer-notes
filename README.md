@@ -19,3 +19,6 @@ int res = x << y; // x * (2 ^ y) = 3 * (2 ^ 5) = 3 * 32 = 96
 An example of bit shifting application is converting IP address into integer.
 
 Merging IP octets into a single integer consumes less memory, more efficient when it comes to comparison operations. Integer representations of IP can be found internally in many network protocols for packet routing.
+
+### Database
+## ACID - Database Transaction Properties
