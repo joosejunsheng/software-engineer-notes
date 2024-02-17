@@ -33,13 +33,14 @@ Merging IP octets into a single integer consumes less memory, more efficient whe
 ### 3) Isolation
 4 Isolation Levels
 - Read Uncommitted (Weakest Isolation)
- * Allowed to read changes of records EVEN IF CHANGES NOT COMMITTED
+  * Allowed to read changes of records EVEN IF CHANGES NOT COMMITTED
 - Read Committed
--- Allowed to read changes of records ONLY IF CHANGES COMMITTED
+  * Allowed to read changes of records ONLY IF CHANGES COMMITTED
 - Repeatable Read
--- Holds read lock on records / rows that are reading by a transaction so other transactions cannot update
--- Avoid Non-Repeatable Read (Runs same query twice and gets different results, caused by committed updates from other transactions in between two queries)
+  * Holds read lock on records / rows that are reading by a transaction so other transactions cannot update
+  * Avoid Non-Repeatable Read (Runs same query twice and gets different results, caused by committed updates from other transactions in between two queries)
 - Serializable (Strictest Isolation)
+  * Makes sure all transactions RUNS SEQUENTIALLY, even if they are executed concurrently
 ### 4) Durability
 - Makes sure database is persistent
 - Database replication in multiple different regions, able to recover, high availability
