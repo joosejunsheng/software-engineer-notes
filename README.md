@@ -33,7 +33,7 @@ Merging IP octets into a single integer consumes less memory, more efficient whe
 ### 3) Isolation
 4 Isolation Levels
 - Read Uncommitted (Weakest Isolation)
--- Allowed to read changes of records EVEN IF CHANGES NOT COMMITTED
+ * Allowed to read changes of records EVEN IF CHANGES NOT COMMITTED
 - Read Committed
 -- Allowed to read changes of records ONLY IF CHANGES COMMITTED
 - Repeatable Read
