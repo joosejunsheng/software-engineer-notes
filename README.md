@@ -22,3 +22,24 @@ Merging IP octets into a single integer consumes less memory, more efficient whe
 
 ### Database
 ## ACID - Database Transaction Properties
+
+### 1) Atomicity
+- Each statement is a transaction (which consists beginTransaction, commitTransaction, rollbackTransaction)
+- It's either all actions performed, or none of them are performed in the end of a transaction
+- Transaction is a single unit of work
+### 2) Consistency
+- Data consistent among all tables, follows data integrity constraints
+- For example, during checkout in systems, check foreign key where the item ID is valid in ITEM Table
+### 3) Isolation
+4 Isolation Levels
+- Read Uncommitted (Weakest Isolation)
+-- Allowed to read changes of records EVEN IF CHANGES NOT COMMITTED
+- Read Committed
+-- Allowed to read changes of records ONLY IF CHANGES COMMITTED
+- Repeatable Read
+-- Holds read lock on records / rows that are reading by a transaction so other transactions cannot update
+-- Avoid Non-Repeatable Read (Runs same query twice and gets different results, caused by committed updates from other transactions in between two queries)
+- Serializable (Strictest Isolation)
+### 4) Durability
+- Makes sure database is persistent
+- Database replication in multiple different regions, able to recover, high availability
