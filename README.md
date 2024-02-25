@@ -21,6 +21,21 @@ An example of bit shifting application is converting IP address into integer.
 Merging IP octets into a single integer consumes less memory, more efficient when it comes to comparison operations. Integer representations of IP can be found internally in many network protocols for packet routing.
 
 ### Database
+
+## What happened when you run a SQL Query?
+### 1) Parsing
+- Database server parses the SQL query to understand structure.
+- Creates an AST (Abstract Syntax Tree), which captures the hierarchical structure of the SQL query
+### 2) Binding
+- Algebrizer (a process in query execution after parsing) will take the parsed AST as an input for binding. To validate if the query is correct / semantically meaningful.
+### 3) Optimize 
+- Receives input from Algebrizer to optimize.
+- Query optimizer will try different execution methods (eg. reading rows, using different indexes) to come out with the most efficient execution plan.
+- Cache the plan in memory for future use for similar query.
+### 4) Execute
+- SQL Server Storage Engine will execute the plan.
+
+
 ## ACID - Database Transaction Properties
 
 ### 1) Atomicity
