@@ -59,3 +59,9 @@ Merging IP octets into a single integer consumes less memory, more efficient whe
 ### 4) Durability
 - Makes sure database is persistent
 - Database replication in multiple different regions, able to recover, high availability
+
+
+## Design an Efficient System That Keeps Track of Likes
+```
+// Redis? MySql? Where should I store??
+```
