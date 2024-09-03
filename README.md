@@ -7,6 +7,8 @@
 )
 - [Database](#database)
   - [Q: What Happens When You Run a SQL Query?](#q-what-happens-when-you-run-a-sql-query)
+  - [Q: What Is a LSMTree](#q-what-is-a-lsmtree)
+  - [Q: What Is a B-Tree](#q-what-is-a-b-tree)
   - [Q: What Does ACID Database Transaction Properties Mean?](#q-what-does-acid-database-transaction-properties-mean)
 
 ## Software Engineering Nutrition
@@ -79,6 +81,24 @@ To go deeper into stack and heap memory, we need to first understand value type 
 #### 4) Execute
 - SQL Server Storage Engine will execute the plan.
 
+### Q: What Is a LSMTree?
+LSMTree (Log-Structured Merge Tree) is a data structure that stores data in key-value pairs that used in several database systems.
+
+In LSMTree, it only appends to the end of the file no matter you insert or update a specific key. It practices an append-only approach for fast write operations.
+
+When a write goes in, it will be constructed into tree structure, which we call a `memtable` here. When the `memtable` reaches a certain size, usually a few MB (megabytes), it will write onto disk as an SSTable file, the subsequent data will be written as the new `memtable`. Compaction will be done on old segment files to consolidate keys with latest value, by removing unused data to reduct size of the segment file.
+- eg. `key1: 2, key2: 123, key2: 73, key1: 1` into `key1: 1, key1: 72`
+
+It is a read-slow structure because when we try to read from a LSMTree, it will
+1) Read from memtable, if it doesn't find the key
+2) Read from segment files, file by file
+3) Segment files will be merged and compacted on the fly
+
+#### Overcome Read-Slow Performance
+To overcome the read-slow performance issue, it uses bloom filter with it so it can tell if a key doesn't exist in the database
+
+#### Overcome Database Crash While Updating
+To avoid database crashing will inserting into a LSMTree, the recent writes that write in the memtable will be double written / keep in a separate log on disk. The logs will be used to restored data just in case the database crashed.
 
 ### Q: What Does ACID Database Transaction Properties Mean?
 #### 1) Atomicity
