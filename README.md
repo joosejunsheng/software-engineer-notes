@@ -3,7 +3,8 @@
 - [Software Engineering Nutrition](#software-engineering-nutrition)
   - [Q: What is Bit Shifting?](#q-what-is-bit-shifting)
   - [Q: Where Is Memory Usually Stored?](#q-what-is-bit-shifting)
-  - [Q: So What Is a Stack in Terms of Memory? Isn't It a Data Structure?](#q-what-is-a-stack)
+  - [Q: So What Is a Stack in Terms of Memory? Isn't It a Data Structure?](#q-so-what-is-a-stack-in-terms-of-memory-isnt-it-a-data-structure
+)
 - [Database](#database)
   - [Q: What Happens When You Run a SQL Query?](#q-what-happens-when-you-run-a-sql-query)
   - [Q: What Does ACID Database Transaction Properties Mean?](#q-what-does-acid-database-transaction-properties-mean)
