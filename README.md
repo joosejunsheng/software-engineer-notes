@@ -6,7 +6,7 @@
   - [Q: So What Is a Stack in Terms of Memory? Isn't It a Data Structure?](#q-what-is-a-stack)
 - [Database](#database)
   - [Q: What Happens When You Run a SQL Query?](#q-what-happens-when-you-run-a-sql-query)
-  - [Q: What Does ACID - Database Transaction Properties Mean?](#q-what-does-acid-database-transaction-properties-mean)
+  - [Q: What Does ACID - Database Transaction Properties Mean?](##q-what-does-acid---database-transaction-properties-mean)
 
 ## Software Engineering Nutrition
 ### Q: What is Bit Shifting?
