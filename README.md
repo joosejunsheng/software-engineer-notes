@@ -1,5 +1,11 @@
 # software-engineer-notes
 
+- [Software Engineering Nutrition](#software-engineering-nutrition)
+  - [Q: What is Bit Shifting?](#q-what-is-bit-shifting)
+- [Database](#database)
+  - [Q: What happened when you run a SQL Query?](#q-what-happened-when-you-run-a-sql-query)
+
+## Software Engineering Nutrition
 ### Q: What is Bit Shifting?
 ```mjs
 x << y
