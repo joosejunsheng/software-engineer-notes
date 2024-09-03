@@ -2,8 +2,11 @@
 
 - [Software Engineering Nutrition](#software-engineering-nutrition)
   - [Q: What is Bit Shifting?](#q-what-is-bit-shifting)
+  - [Q: Where Is Memory Usually Stored?](#q-what-is-bit-shifting)
+  - [Q: So What Is a Stack in Terms of Memory? Isn't It a Data Structure?](#q-what-is-a-stack)
 - [Database](#database)
-  - [Q: What happened when you run a SQL Query?](#q-what-happened-when-you-run-a-sql-query)
+  - [Q: What Happens When You Run a SQL Query?](#q-what-happens-when-you-run-a-sql-query)
+  - [Q: What Does ACID - Database Transaction Properties Mean?](#q-does-acid-mean)
 
 ## Software Engineering Nutrition
 ### Q: What is Bit Shifting?
@@ -26,7 +29,7 @@ An example of bit shifting application is converting IP address into integer.
 
 Merging IP octets into a single integer consumes less memory, more efficient when it comes to comparison operations. Integer representations of IP can be found internally in many network protocols for packet routing.
 
-### Q: Where does memory usually stored in?
+### Q: Where Is Memory Usually Stored?
 Memory usually stores in heap and stack.
 
 ### Q: So what is a stack in terms of memory? Isn't it a data structure?
@@ -51,7 +54,7 @@ When the main() is called, the main() method will be added into an empty call st
 
 In every method in call stack will have its own local variable for example variables x and y in main(), variable total in doAddition()
 
-### Q: How does the heap differ from stack?
+### Q: So What Is a Stack in Terms of Memory? Isn't It a Data Structure?
 Variables in stack will disappeared after the specific method finished its execution, and here is where heap memory comes in if you need a variable to outlive stack memory. Heap memory is still accessible after all methods finished running.
 
 Since heap is so powerful, why not we just use heap for every variables? Because its EXPENSIVE (causes overhead)
@@ -62,7 +65,7 @@ To go deeper into stack and heap memory, we need to first understand value type 
 
 ## Database
 
-### Q: What happened when you run a SQL Query?
+### Q: What Happens When You Run a SQL Query?
 #### 1) Parsing
 - Database server parses the SQL query to understand structure.
 - Creates an AST (Abstract Syntax Tree), which captures the hierarchical structure of the SQL query
@@ -76,7 +79,7 @@ To go deeper into stack and heap memory, we need to first understand value type 
 - SQL Server Storage Engine will execute the plan.
 
 
-### Q: What does ACID - Database Transaction Properties mean?
+### Q: What Does ACID - Database Transaction Properties Mean?
 #### 1) Atomicity
 - Each statement is a transaction (which consists beginTransaction, commitTransaction, rollbackTransaction)
 - It's either all actions performed, or none of them are performed in the end of a transaction
